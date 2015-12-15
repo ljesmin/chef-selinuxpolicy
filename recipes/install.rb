@@ -21,7 +21,12 @@ case node['platform_family']
       when 7
         pkgs = [ 'policycoreutils-python', 'selinux-policy-devel', 'setools-console', 'make' ]
       else
-        raise 'Unknown version of RHEL/derivative, cannot determine required package names'
+        case node['platform']
+          when "amazon"
+            pkgs = [ 'policycoreutils-python', 'selinux-policy', 'setools-console', 'make' ]
+          else
+            raise 'Unknown version of RHEL/derivative, cannot determine required package names'
+        end
     end
   else
     raise 'Unknown distro, cannot determine required package names'
