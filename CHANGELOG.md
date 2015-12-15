@@ -3,6 +3,10 @@ selinuxpolicy CHANGELOG
 
 This file is used to list changes made in each version of the selinuxpolicy cookbook.
 
+0.9.3
+-----
+- [ljesmin] - Add support for Amazon Linux
+
 0.9.2
 -----
 - [backslasher] - Ignoring nonexisting files in restorecon
